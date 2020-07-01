@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ColorNotes</string>
+    <string name="alert_title">You want delete ?</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Note is delete</string>
+    <string name="add">Note is add</string>
+    <string name="edit">Note is edit</string>
+</resources>

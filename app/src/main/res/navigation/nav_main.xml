@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@+id/fra_home"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/fra_home"
+        android:name="com.example.colornotes.ui.main.home.HomeFragment"
+        android:label="Fragment home"
+        tools:layout="@layout/home_fragment">
+
+        <action
+            app:popUpToInclusive="true"
+            android:id="@+id/action_hone_to_add"
+            app:destination="@id/fra_add" />
+        <action
+            app:popUpToInclusive="true"
+            android:id="@+id/action_home_to_view"
+            app:destination="@+id/fra_view" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fra_add"
+        android:name="com.example.colornotes.ui.main.add.AddFragment"
+        android:label="Fragment add"
+        tools:layout="@layout/add_fragment">
+
+        <action
+            app:popUpTo="@+id/fra_home"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_add_to_home"
+            app:destination="@+id/fra_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fra_edit"
+        android:name="com.example.colornotes.ui.main.edit.EditFragment"
+        android:label="Fragment edit"
+        tools:layout="@layout/edit_fragment">
+        <argument
+            android:name="ID"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            app:popUpTo="@+id/fra_home"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_edit_to_home"
+            app:destination="@+id/fra_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fra_view"
+        android:name="com.example.colornotes.ui.main.view.ViewFragment"
+        android:label="Fragment view"
+        tools:layout="@layout/view_fragment">
+        <argument
+            android:name="ID"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            app:popUpTo="@+id/fra_home"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_view_to_home"
+            app:destination="@+id/fra_home" />
+        <action
+            app:popUpTo="@+id/fra_edit"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_view_to_edit"
+            app:destination="@+id/fra_edit" />
+
+    </fragment>
+
+</navigation>
